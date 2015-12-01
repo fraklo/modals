@@ -9,7 +9,7 @@ A simple js drop-in for basic modals. In plain JS.
 Include the script and css located on the `dist` folder
 
 ```html
-<script src="dist/simplemodals.min.js"></script>
+<script src="dist/js/simplemodals.min.js"></script>
 <link href="dist/css/simplemodals.min.css" rel="stylesheet">
 ```
 
