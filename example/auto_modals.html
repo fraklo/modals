@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auto Modals</title>
+    <link href="../dist/css/simplemodals.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Ohai</h1>
+    <h2>Wanna checkout some auto initiated modals?</h2>
+
+    <!-- Trigger Markup -->
+    <button class="js_modal_open" data-target="js_basic_modal">Sure, show me basic.</button>
+    <button class="js_modal_open" data-target="js_full_modal">Neat, let's go full modal</button>
+
+    <!-- Modal Markup -->
+    <div class="modal js_basic_modal">
+      <div class="modal-wrapper">
+        <div class="modal-body">
+          Here, have some modal body
+        </div>
+      </div>
+    </div>
+    <div class="modal js_full_modal">
+      <div class="modal-wrapper">
+        <div class="modal-header">
+          Head,
+        </div>
+        <div class="modal-body">
+          Shoulders,
+        </div>
+        <div class="modal-footer">
+          Knees and Toes!
+          <button class="js_modal_close">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plugin -->
+    <script src="../dist/js/simplemodals.min.js"></script>
+
+    <!-- JS -->
+    <script>
+    var modals = new SimpleModal();
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual Modals</title>
+    <link href="../dist/css/simplemodals.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>So, you think you can modal?</h1>
+    <h2>Go ahead, set some modal triggers.</h2>
+
+    <!-- Trigger Markup -->
+    <button id="modal-trigger">Launch Modal</button>
+    <button id="modal-data">Get modal with data</button>
+
+    <!-- Modal Markup -->
+    <div class="modal js_modal">
+      <div class="modal-wrapper">
+        <div class="modal-header">
+          Look at that.
+        </div>
+        <div class="modal-body">
+          A modal has appeared.
+        </div>
+        <div class="modal-footer">
+          <button id="close-trigger">Close All Ye Modals</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal js_modal_data">
+      <div class="modal-wrapper">
+        <div class="modal-header">
+          Look at that.
+        </div>
+        <div class="modal-body">
+          <div class="js_modal_data"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="js_modal_close">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plugin -->
+    <script src="../dist/js/simplemodals.min.js"></script>
+
+    <!-- JS -->
+    <script>
+      var closer = document.getElementById('close-trigger'),
+          modalTrigger = document.getElementById('modal-trigger'),
+          modalData = document.getElementById('modal-data'),
+          modals = new SimpleModal();
+
+      modalTrigger.addEventListener('click', function() {
+        modals.open('js_modal');
+      });
+
+      closer.addEventListener('click', function() {
+        modals.close();
+      });
+
+      modalData.addEventListener('click', function() {
+        var promise = makeRequest('json_stub.html');
+        modals.open('js_modal_data', promise)
+      });
+
+      function makeRequest(url) {
+        return new Promise(function(resolve, reject) {
+          var httpRequest = new XMLHttpRequest();
+          httpRequest.open('GET', url);
+          httpRequest.onload = function() {
+            if(httpRequest.status == 200) {
+              resolve(httpRequest.response);
+            } else {
+              reject(Error(req.statusText));
+            }
+          };
+          httpRequest.onerror = function() {
+            reject(Error("Network Error"));
+          };
+          httpRequest.send();
+        });
+      }
+    </script>
+</body>
+</html>
