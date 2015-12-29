@@ -18,9 +18,10 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="assets/css/github-light.css" media="screen">
     <link rel="stylesheet" type="text/css" href="assets/css/simplemodals.min.css" media="screen">
+    <link href="assets/css/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" media="screen">
   </head>
   <body>
     <section class="page-header">
@@ -43,19 +44,19 @@
         Setup
       </h2>
       <p>Include the JS script from the <code>dist</code> folder.</p>
-      <pre><code><!-- Scripts/Styles -->
+      <pre><code class="language-html"><!-- Scripts/Styles -->
 <script src="dist/js/simplemodals.min.js"></script>
 <link href="dist/css/simplemodals.min.css" rel="stylesheet"></code></pre>
 
       <p>Add <code>js_modal_open</code> class to elements that you want to trigger modals.
         <br/>
         You will also need to set the <code>data-target</code> attribute equal to the class of the modal target you want to open when this trigger is clicked.</p>
-      <pre><code><!-- Triggers -->
+      <pre><code class="language-html"><!-- Triggers -->
 <button class="js_modal_open btn medium" data-target="js_some_modal">Some Button</button>
 <div class="js_modal_open btn medium" data-target="js_another_modal">Some Div</div></code></pre>
       <p>Now you will need to setup your modal targets. These targets should have classes that match the <code>data-target</code> attributes that were set for the triggers.
       </p>
-      <pre><code><!-- Target -->
+      <pre><code class="language-html"><!-- Target -->
 <div class="modal js_some_modal">
   <div class="modal-wrapper">
     <div class="modal-body">
@@ -64,7 +65,7 @@
   </div>
 </div></code></pre>
       <p>If you want to have a close trigger, just add an element with the <code>js_modal_close</code> class.</p>
-      <pre><code><!-- Target with js_modal_close -->
+      <pre><code class="language-html"><!-- Target with js_modal_close -->
 <div class="modal js_another_modal">
   <div class="modal-wrapper">
     <div class="modal-body">
@@ -76,7 +77,7 @@
   </div>
 </div></code></pre>
       <p>Lastly, initiate the modals like so:</p>
-      <pre><code><!-- Initialize SimpleModals -->
+      <pre><code class="language-html"><!-- Initialize SimpleModals -->
 <script>
   var modals = new SimpleModal();
 </script></code></pre>
@@ -88,7 +89,7 @@
       <h2>
       <a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h2>
       <p>You can change the trigger/style classes that simplemodals will look for and set. Here are the options and the defaults:</p>
-      <pre><code><!-- Options -->
+      <pre><code class="language-javascript"><!-- Options -->
 // Class applied to active modal
 activeClass: 'active',
 
@@ -171,20 +172,20 @@ shadeTrigger: 'js_modal_shade'</code></pre>
       <span class="site-footer-credits">This page uses the <a href="https://github.com/jasonlong/cayman-theme" target="_blank">Cayman theme</a> by <a href="https://twitter.com/jasonlong" target="_blank">Jason Long</a>.</span>
     </footer>
     <script src="assets/js/simplemodals.min.js"></script>
-
     <script>
+      // Give prism a little help with starting comments  in code tags
       var modals = new SimpleModal();
 
       function codify() {
         var codes = document.getElementsByTagName('code'),
             i;
         for(i=0; i < codes.length; i++) {
-          codes[i].innerHTML = String(codes[i].innerHTML).replace(/</g, '&lt;')
-                                                         .replace(/>/g, '&gt;');
+          codes[i].innerHTML = String(codes[i].innerHTML).replace(/</g, '&lt;');
         }
       };
       codify();
     </script>
+    <script src="assets/js/prism.js"></script>
 
   </body>
 </html>
