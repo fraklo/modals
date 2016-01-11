@@ -29,13 +29,13 @@ a {
   .btn + .btn {
     margin-left: 1rem; }
   .btn.medium {
-    background-color: rgba(21, 153, 87, .8);
+    background-color: rgba(100, 118, 135, .8);
     color: #fff; }
     .btn.medium:hover {
       background-color: rgba(21, 153, 87, 1);
       color: #fff; }
   .btn.dark {
-    background-color: rgba(30, 107, 184, .8);
+    background-color: rgba(72, 89, 106, .8);
     color: #fff; }
     .btn.dark:hover {
       background-color: rgba(30, 107, 184, 1);
@@ -99,8 +99,8 @@ a {
 .page-header {
   color: #fff;
   text-align: center;
-  background-color: #159957;
-  background-image: linear-gradient(120deg, #155799, #159957); }
+  background-color: #48596A;
+  background-image: radial-gradient(circle, #7A858E, #253A51); }
 
 @media screen and (min-width: 64em) {
   .header-main {
@@ -155,7 +155,7 @@ a {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
-  color: #159957; }
+  color: #48596A; }
 .main-content p {
   margin-bottom: 1em; }
 .main-content code {
@@ -271,8 +271,8 @@ pre[class*="language-"] {
   color: rgba(255,255,255, .65);
   padding: 3rem 0;
   text-align: center;
-  background-color: #159957;
-  background-image: linear-gradient(120deg, #155799, #159957); }
+  background-color: #48596A;
+  background-image: radial-gradient(circle, #7A858E, #253A51); }
   .site-footer a {
     color: rgba(255,255,255, .85); }
     .site-footer a:hover {
