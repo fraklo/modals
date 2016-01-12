@@ -1,8 +1,3 @@
-/*!
- * modals.js v0.1
- * https://github.com/fraklo/modals
- *
- */
 ;(function() {
   "use strict";
   window.SimpleModal = function(opts) {
@@ -12,6 +7,7 @@
           closeTrigger: 'js_modal_close',
           dataClass: 'js_modal_data',
           dataKey: 'html',
+          dataTarget: 'target',
           loadingClass: 'loading',
           modalTrigger: 'js_modal_open',
           shadeClass: 'modal-shade',
@@ -67,7 +63,7 @@
       modalTriggers = document.getElementsByClassName(options.modalTrigger);
       for(i = 0; i < modalTriggers.length; i++) {
         modalTriggers[i].addEventListener('click', function() {
-          modalOpen(this.dataset.target);
+          modalOpen(this.getAttribute('data-'+options.dataTarget));
         });
       }
       for(i = 0; i < closeTriggers.length; i++) {
