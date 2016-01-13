@@ -130,6 +130,10 @@ dataClass: 'js_modal_data',
 // JSON key to pull data from Promise result
 dataKey: 'html',
 
+// This value will be prepended with data-, by default this is data-target
+// This is the attribute that simplemodals looks for to get the target of the modal
+dataTarget: 'target',
+
 // Class applied to modal when fetching Promise data
 loadingClass: 'loading',
 
